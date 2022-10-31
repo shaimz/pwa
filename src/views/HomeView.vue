@@ -1,18 +1,28 @@
 <template>
+  <div class="logout">
+    <button @click="logout">Logout</button>
+  </div>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <DashboardComponent />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import DashboardComponent from "@/components/DashboardComponent.vue";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    DashboardComponent,
+  },
+  setup() {
+    const logout = () => {
+      // remove the token and the user from cookies / localStorage
+    };
+    return {
+      logout,
+    };
   },
 };
 </script>
